@@ -7,6 +7,8 @@ class RocketReadability {
   init() {
     this.initParsedArticle();
     this.showParsedArticle();
+    this.setInitialMode();
+    this.setEventListeners();
   }
 
   createElement(options) {
@@ -54,7 +56,14 @@ class RocketReadability {
     // Small template for ReadabilityJS output.
     var template = `
       <div id="readability-container">
-        <h1>${this.article.title}</h1>
+        <div id="readability-options-cog"></div>
+        <div id="readability-options">
+          <strong>Choose Reading Mode</strong><br />
+          <div>
+            <label><input type="radio" name="mode" value="default">Default</label> &nbsp; &nbsp; <label><input type="radio" name="mode" value="sepia">Sepia</label> &nbsp; &nbsp; <label><input type="radio" name="mode" value="grey">Grey</label> &nbsp; &nbsp; <label><input type="radio" name="mode" value="night">Night</label>
+          </div>
+        </div>
+        <h1>${this.toTitleCase(this.article.title)}</h1>
         <p>${this.article.content}</p>
       </div>
     `
@@ -65,6 +74,49 @@ class RocketReadability {
     // Assign the template to the body.
     document.body.innerHTML = template;
 
+  }
+
+  toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  setReadingMode(name) {
+    document.body.className = name
+    chrome.storage.sync.set({mode: name});
+    document.querySelector(`input[value="${name}"]`).checked = true
+  }
+
+  setInitialMode() {
+    const self = this;
+    chrome.storage.sync.get(['mode'], function(result) {
+      let selectedMode = result.mode
+      if (selectedMode) {
+        self.setReadingMode(selectedMode);
+      } else {
+        self.setReadingMode('default');
+      }
+    });
+  }
+
+  setEventListeners() {
+    const self = this;
+    const elem = document.querySelector('#readability-options')
+    document.addEventListener('click', function(e) {
+      if (e.target.name && e.target.name === 'mode') {
+        self.setReadingMode(e.target.value);
+        return false;
+      }
+      if (e.target.id === 'readability-options-cog') {
+        if (elem.style.display === 'block') {
+          elem.style.display = 'none';
+        } else {
+          elem.style.display = 'block';
+        }
+        
+      }
+    })
   }
 
 }

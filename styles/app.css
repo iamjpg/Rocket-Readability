@@ -1,3 +1,23 @@
+body, body.default {
+  color: #000000 !important;
+  background-color: #FFF !important;
+}
+
+body.sepia {
+  color: #000000 !important;
+  background-color: #f8f1e3 !important;
+}
+
+body.grey {
+  color: #c9caca !important;
+  background-color: #5a5a5c !important;
+}
+
+body.night {
+  color: #b0b0b0 !important;
+  background-color: #121212 !important;
+}
+
 #readability-container {
   max-width: 640px;
   margin: 0 auto;
@@ -17,19 +37,6 @@
 }
 
 #readability-message {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  padding: 40px !important;
-  text-align: center !important;
-  z-index: 1100007 !important;
-  background: #333 !important;
-  color: #fff !important;
-  font-size: 16px;
-}
-
-#readability-message {
   font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif !important;
   position: fixed !important;
   top: 0 !important;
@@ -41,4 +48,33 @@
   text-align: center !important;
   font-size: 16px !important;
   z-index: 1100007 !important;
+}
+
+#readability-options-cog {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4gICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyMHYyMEgwVjB6Ii8+ICAgIDxwYXRoIGQ9Ik0xNS45NSAxMC43OGMuMDMtLjI1LjA1LS41MS4wNS0uNzhzLS4wMi0uNTMtLjA2LS43OGwxLjY5LTEuMzJjLjE1LS4xMi4xOS0uMzQuMS0uNTFsLTEuNi0yLjc3Yy0uMS0uMTgtLjMxLS4yNC0uNDktLjE4bC0xLjk5LjhjLS40Mi0uMzItLjg2LS41OC0xLjM1LS43OEwxMiAyLjM0Yy0uMDMtLjItLjItLjM0LS40LS4zNEg4LjRjLS4yIDAtLjM2LjE0LS4zOS4zNGwtLjMgMi4xMmMtLjQ5LjItLjk0LjQ3LTEuMzUuNzhsLTEuOTktLjhjLS4xOC0uMDctLjM5IDAtLjQ5LjE4bC0xLjYgMi43N2MtLjEuMTgtLjA2LjM5LjEuNTFsMS42OSAxLjMyYy0uMDQuMjUtLjA3LjUyLS4wNy43OHMuMDIuNTMuMDYuNzhMMi4zNyAxMi4xYy0uMTUuMTItLjE5LjM0LS4xLjUxbDEuNiAyLjc3Yy4xLjE4LjMxLjI0LjQ5LjE4bDEuOTktLjhjLjQyLjMyLjg2LjU4IDEuMzUuNzhsLjMgMi4xMmMuMDQuMi4yLjM0LjQuMzRoMy4yYy4yIDAgLjM3LS4xNC4zOS0uMzRsLjMtMi4xMmMuNDktLjIuOTQtLjQ3IDEuMzUtLjc4bDEuOTkuOGMuMTguMDcuMzkgMCAuNDktLjE4bDEuNi0yLjc3Yy4xLS4xOC4wNi0uMzktLjEtLjUxbC0xLjY3LTEuMzJ6TTEwIDEzYy0xLjY1IDAtMy0xLjM1LTMtM3MxLjM1LTMgMy0zIDMgMS4zNSAzIDMtMS4zNSAzLTMgM3oiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #000 !important;
+}
+
+body.night #readability-options-cog {
+  background-color: #fff !important;
+}
+
+#readability-options {
+  display: none;
+  padding: 20px;
+  background: #fff !important;
+  color: #000 !important;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  box-shadow: 20px 20px 0 0 rgba(0,0,0,.5);
+  border: 1px solid #f5f5f5;
 }

@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Rocket Readability",
   "description": "This extension uses readability.js to parse out the 'cruft' leaving you with simply the article to read.",
-  "version": "0.0.0.3",
+  "version": "0.0.0.5",
   "background": {
     "scripts": ["javascripts/background.js"]
   },
@@ -15,7 +15,8 @@
     "128": "rocket.png"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
   "content_scripts": [{
     "matches": [
