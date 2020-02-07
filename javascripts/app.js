@@ -83,7 +83,8 @@ class RocketReadability {
   }
 
   setReadingMode(name) {
-    document.body.className = name
+    document.body.className = 'rocket-readability';
+    document.body.classList.add(name);
     chrome.storage.sync.set({mode: name});
     document.querySelector(`input[value="${name}"]`).checked = true
   }

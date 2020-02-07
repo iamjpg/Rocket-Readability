@@ -1,19 +1,19 @@
-body, body.default {
+body.rocket-readability.default {
   color: #000000 !important;
   background-color: #FFF !important;
 }
 
-body.sepia {
+body.rocket-readability.sepia {
   color: #000000 !important;
   background-color: #f8f1e3 !important;
 }
 
-body.grey {
+body.rocket-readability.grey {
   color: #c9caca !important;
   background-color: #5a5a5c !important;
 }
 
-body.night {
+body.rocket-readability.night {
   color: #b0b0b0 !important;
   background-color: #121212 !important;
 }
